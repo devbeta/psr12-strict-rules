@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="PSR12-Strict-Rules"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../vendor/squizlabs/php_codesniffer/phpcs.xsd">
+    <description>PSR-12 strict coding standard</description>
+
+    <!-- Code MUST follow all rules outlined in PSR-12. -->
+    <rule ref="PSR12"/>
+
+    <!-- Generic rules -->
+
+    <!-- All values in multiline arrays must be indented with 4 spaces. -->
+    <rule ref="Generic.Arrays.ArrayIndent"/>
+
+    <!-- The short array syntax MUST be used to define arrays. -->
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+
+    <!-- There MUST NOT be duplicate class names. -->
+    <rule ref="Generic.Classes.DuplicateClassName"/>
+
+    <!-- The final keyword on methods MUST be omitted in final classes. -->
+    <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
+
+    <!-- Detects unnecessary overridden methods that simply call their parent. -->
+    <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
+
+    <!-- There MUST be one whitespace after a type casting operator. -->
+    <rule ref="Generic.Formatting.SpaceAfterCast"/>
+
+    <!-- There MUST be one whitespace after unary not. -->
+    <rule ref="Generic.Formatting.SpaceAfterNot"/>
+
+    <!-- Checks the cyclomatic complexity (McCabe) for functions. -->
+    <rule ref="Generic.Metrics.CyclomaticComplexity"/>
+
+    <!-- Checks the nesting level for methods. -->
+    <rule ref="Generic.Metrics.NestingLevel"/>
+
+    <!-- Checks that abstract classes are prefixed by Abstract. -->
+    <rule ref="Generic.NamingConventions.AbstractClassNamePrefix"/>
+
+    <!-- Ensures method and functions are named correctly. -->
+    <rule ref="Generic.NamingConventions.CamelCapsFunctionName"/>
+
+    <!-- Checks that interfaces are suffixed by Interface. -->
+    <rule ref="Generic.NamingConventions.InterfaceNameSuffix"/>
+
+    <!-- Checks that traits are suffixed by Trait. -->
+    <rule ref="Generic.NamingConventions.TraitNameSuffix"/>
+
+    <!-- The backtick operator MUST NOT be used. -->
+    <rule ref="Generic.PHP.BacktickOperator"/>
+
+    <!-- Deprecated PHP functions MUST be avoided. -->
+    <rule ref="Generic.PHP.DeprecatedFunctions"/>
+
+    <!-- The PHP `goto` language construct SHOULD NOT be used. -->
+    <rule ref="Generic.PHP.DiscourageGoto"/>
+
+    <!-- Alias functions SHOULD NOT be used. -->
+    <rule ref="Generic.PHP.ForbiddenFunctions">
+        <properties>
+            <property name="forbiddenFunctions" type="array">
+                <element key="chop" value="rtrim"/>
+                <element key="close" value="closedir"/>
+                <element key="compact" value="null"/>
+                <element key="delete" value="unset"/>
+                <element key="doubleval" value="floatval"/>
+                <element key="extract" value="null"/>
+                <element key="fputs" value="fwrite"/>
+                <element key="ini_alter" value="ini_set"/>
+                <element key="is_double" value="is_float"/>
+                <element key="is_integer" value="is_int"/>
+                <element key="is_long" value="is_int"/>
+                <element key="is_null" value="null"/>
+                <element key="is_real" value="is_float"/>
+                <element key="join" value="implode"/>
+                <element key="key_exists" value="array_key_exists"/>
+                <element key="pos" value="current"/>
+                <element key="settype" value="null"/>
+                <element key="show_source" value="highlight_file"/>
+                <element key="sizeof" value="count"/>
+                <element key="strchr" value="strstr"/>
+            </property>
+        </properties>
+    </rule>
+
+    <!-- Throws an error or warning when any code prefixed with an asperand is encountered. -->
+    <rule ref="Generic.PHP.NoSilencedErrors"/>
+
+    <!-- Checks that the `strict_types` has been declared. -->
+    <rule ref="Generic.PHP.RequireStrictTypes"/>
+
+    <!-- The constant `PHP_SAPI` SHOULD be used instead of the `php_sapi_name()` function. -->
+    <rule ref="Generic.PHP.SAPIUsage"/>
+
+    <!-- Checks that two strings are not concatenated together; suggests using one string instead. -->
+    <rule ref="Generic.Strings.UnnecessaryStringConcat"/>
+
+    <!-- Check & fix whitespace on the inside of arbitrary parentheses. -->
+    <rule ref="Generic.WhiteSpace.ArbitraryParenthesesSpacing"/>
+
+    <!-- Verifies spacing between the spread operator and the variable/function call it applies to. -->
+    <rule ref="Generic.WhiteSpace.SpreadOperatorSpacingAfter"/>
+
+    <!-- PEAR rules -->
+
+    <!-- Verifies that control statements conform to their coding standards. -->
+    <rule ref="PEAR.ControlStructures.ControlSignature"/>
+
+    <!-- Ensure multi-line `if` conditions are defined correctly. -->
+    <rule ref="PEAR.ControlStructures.MultiLineCondition"/>
+
+    <!-- If an assignment goes over two lines, ensure the equal sign is indented. -->
+    <rule ref="PEAR.Formatting.MultiLineAssignment"/>
+
+    <!-- Ensure single and multi-line function declarations are defined correctly. -->
+    <rule ref="PEAR.Functions.FunctionDeclaration"/>
+
+    <!-- Checks that object operators are indented correctly. -->
+    <rule ref="PEAR.WhiteSpace.ObjectOperatorIndent"/>
+
+    <!-- Checks that the closing braces of scopes are aligned correctly. -->
+    <rule ref="PEAR.WhiteSpace.ScopeClosingBrace"/>
+
+    <!-- Squiz rules -->
+
+    <!-- Checks the declaration of the class and its inheritance is correct. -->
+    <rule ref="Squiz.Classes.ClassDeclaration"/>
+
+    <!-- The file name MUST match the case of the terminating class name. -->
+    <rule ref="Squiz.Classes.ClassFileName"/>
+
+    <!-- For self-reference a class lower-case `self::` MUST be used
+    without spaces around the scope resolution operator. -->
+    <rule ref="Squiz.Classes.SelfMemberReference"/>
+
+    <!-- The `&&` and `||` operators SHOULD be used instead of `and` and `or`. -->
+    <rule ref="Squiz.Operators.ValidLogicalOperators"/>
+
+    <!-- The `global` keyword MUST NOT be used. -->
+    <rule ref="Squiz.PHP.GlobalKeyword"/>
+
+    <!-- PHP function calls MUST be in lowercase. -->
+    <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
+
+    <!-- Non executable code MUST be removed. -->
+    <rule ref="Squiz.PHP.NonExecutableCode"/>
+
+    <!-- The pseudo-variable `$this` MUST NOT be called inside a static method or function. -->
+    <rule ref="Squiz.Scope.StaticThisUsage"/>
+
+    <!-- Makes sure there are no spaces around the concatenation operator. -->
+    <rule ref="Squiz.Strings.ConcatenationSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+        </properties>
+    </rule>
+
+    <!-- Checks the separation between functions and methods. -->
+    <rule ref="Squiz.WhiteSpace.FunctionSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+            <property name="spacingBeforeFirst" value="0" />
+            <property name="spacingAfterLast" value="0" />
+        </properties>
+    </rule>
+
+    <!-- There MUST be a single space after language constructs. -->
+    <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+
+    <!-- There MUST NOT be any white space around the object operator UNLESS multilines are used. -->
+    <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
+
+    <!-- Verifies that class members are spaced correctly. -->
+    <rule ref="Squiz.WhiteSpace.MemberVarSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+            <property name="spacingBeforeFirst" value="0" />
+        </properties>
+    </rule>
+
+    <!-- Ensure there is no whitespace before/after an object operator. -->
+    <rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing">
+        <properties>
+            <property name="ignoreNewlines" value="true"/>
+        </properties>
+    </rule>
+
+    <!-- Verifies that operators have valid spacing surrounding them. -->
+    <rule ref="Squiz.WhiteSpace.OperatorSpacing">
+        <properties>
+            <property name="ignoreNewlines" value="true"/>
+        </properties>
+    </rule>
+
+    <!-- There MUST NOT be a space before a semicolon. Redundant semicolons SHOULD be avoided. -->
+    <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
+</ruleset>

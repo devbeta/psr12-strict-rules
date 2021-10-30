@@ -1,0 +1,19 @@
+{
+    "name": "devbeta/psr12-strict-rules",
+    "description": "PSR-12 strict coding standard",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "minimum-stability": "stable",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": "^8.0",
+        "squizlabs/php_codesniffer": "^3.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "PSR12-Strict-Rules\\": "src/PSR12-Strict-Rules/"
+        }
+    }
+}

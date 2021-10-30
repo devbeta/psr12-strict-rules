@@ -34,7 +34,7 @@ Create file `phpcs.xml` on base path of your repository with this content:
 
     <arg value="p"/>
 
-    <rule ref="PSR12StrictRules"/>
+    <rule ref="PSR12-Strict-Rules"/>
 
     <file>config</file>
     <file>src</file>

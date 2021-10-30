@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "PSR12StrictRules\\": "src/PSR12StrictRules/"
+            "PSR12-Strict-Rules\\": "src/PSR12-Strict-Rules/"
         }
     }
 }
